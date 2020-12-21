@@ -1,21 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, View,Text} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack'
+
+ 
+import JacketDetails from './src/screens/JacketDetails';
+import JacketsScreen from './src/screens/JacketsScreen'                
+
+const Stack = createStackNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          title: "Jacket Details",
+          // headerStyle:{
+          //   backgroundColor:"#3b31eb"
+          // },
+          headerTintColor: "#b870d4",
+          headerTitleAlign: "center",
+          // headerRight: () => (<Text style={{ color: "#3b31eb", marginRight: 20 }}>Icons</Text>
+          // )
+        }}
+      >
+        <Stack.Screen
+          // options={{}}
+          name='Jackets' component={JacketsScreen} />
+        <Stack.Screen name='JacketDetails' component={JacketDetails} />
+        
+      </Stack.Navigator>
+    </NavigationContainer>
+
+
+    // <View style={styles.container}>
+    //   {/* <RedJacket/> */}
+    //   {/* <Jackets/> */}
+    //   <JacketsScreen/>
+    // </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+
+//   },
+// });

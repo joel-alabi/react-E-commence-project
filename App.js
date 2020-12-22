@@ -15,17 +15,13 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           title: "Jacket Details",
-          // headerStyle:{
-          //   backgroundColor:"#3b31eb"
-          // },
           headerTintColor: "#b870d4",
           headerTitleAlign: "center",
-          // headerRight: () => (<Text style={{ color: "#3b31eb", marginRight: 20 }}>Icons</Text>
-          // )
+          
         }}
       >
         <Stack.Screen
-          // options={{}}
+          
           name='Jackets' component={JacketsScreen} />
         <Stack.Screen name='JacketDetails' component={JacketDetails} />
         
@@ -33,17 +29,8 @@ export default function App() {
     </NavigationContainer>
 
 
-    // <View style={styles.container}>
-    //   {/* <RedJacket/> */}
-    //   {/* <Jackets/> */}
-    //   <JacketsScreen/>
-    // </View>
+    
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
 
-//   },
-// });
